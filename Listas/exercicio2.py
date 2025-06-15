@@ -8,7 +8,9 @@ frutas = ['banana', 'maca', 'laranja', 'pera', 'abacate']
 print(frutas[2])
 
 # Adição e Remoção de Elementos:
+frutas.insert(0, 'melao')
 
+print(frutas)
 # Adicione a fruta "morango" à lista de frutas criada anteriormente.
 frutas.append('morango')
 

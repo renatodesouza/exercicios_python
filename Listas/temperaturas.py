@@ -6,10 +6,12 @@ import random
 
 temperatura = [round(random.uniform(20, 36)) for _ in range(12)]
 
-meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Julho',
-          'Junho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+          'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
 
-media_anual = sum(temperatura) / len(temperatura)
+media_anual = round(sum(temperatura) / len(temperatura))
+
+print(f'A média anual da temperatura é: {media_anual}')
 
 for i in range(len(temperatura)):
     if temperatura[i] > media_anual:

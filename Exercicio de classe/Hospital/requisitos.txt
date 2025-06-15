@@ -1,0 +1,135 @@
+Enunciado do Desafio: Sistema de Cadastro de Pacientes
+Contexto
+Uma rede de hospitais está recrutando desenvolvedores para criar um sistema de gestão de pacientes em Python ou Ruby. Como diferencial, oferecerá treinamento e certificação na linguagem escolhida. Para avaliar as habilidades dos candidatos, foi proposto um desafio de implementação: construir um módulo de cadastro de pacientes, contemplando pacientes internados e ambulatoriais.
+
+Objetivo
+Desenvolver em Python (ou Ruby) uma biblioteca ou API que permita:
+
+Cadastrar pacientes com dados pessoais e de histórico médico.
+
+Diferenciar pacientes internados de ambulatoriais usando herança de classes.
+
+Armazenar e exibir informações específicas de cada tipo de paciente.
+
+Requisitos Funcionais
+1. Dados comuns a todo paciente
+nome (string)
+
+email (string)
+
+telefone (string)
+
+endereço
+
+rua (string)
+
+número (int)
+
+bairro (string)
+
+CEP (string)
+
+cidade (string)
+
+estado (string)
+
+data de nascimento (date)
+
+sexo (enum: M, F, Outro)
+
+CPF (string)
+
+peso (float, em kg)
+
+altura (float, em m)
+
+lista de alergias (lista de strings)
+
+2. Paciente Internado
+Herda tudo de Paciente
+
+data de internação (date)
+
+número do leito (string)
+
+plano de saúde (string)
+
+lista de procedimentos realizados (lista de strings)
+
+3. Paciente Ambulatorial
+Herda tudo de Paciente
+
+data da última consulta (date)
+
+especialidade médica (string)
+
+lista de prescrições (lista de strings)
+
+Modelo de Classes (diagrama simplificado)
+scss
+Copiar
+Editar
+┌──────────────────────────┐
+│        Paciente         │  ← atributos e métodos comuns
+│──────────────────────────│
+│ - nome                   │
+│ - email                  │
+│ - telefone               │
+│ - endereco               │
+│ - data_nasc              │
+│ - sexo                   │
+│ - cpf                    │
+│ - peso                   │
+│ - altura                 │
+│ - alergias               │
+│ + calcular_imc()         │
+│ + validar_cpf()          │
+│ + idade()                │
+└───────┬──────────────────┘
+        │
+  ┌─────┴─────────┐
+  │               │
+┌───────────────┐   ┌────────────────┐
+│ Internacao    │   │ Ambulatorial   │
+│───────────────│   │────────────────│
+│ - data_int    │   │ - data_consulta│
+│ - leito       │   │ - especialidade│
+│ - plano_saude │   │ - prescricoes  │
+│ - procedimentos│  └────────────────┘
+│ + diáriadeInternação()│
+└────────────────┘
+Entregáveis
+Implementação do código em Python ou Ruby, com:
+
+Classe Paciente (base) + subclasses Internacao e Ambulatorial.
+
+Métodos para:
+
+calcular_imc() → peso / (altura²)
+
+validar_cpf() → check simplificado (11 dígitos) ou completo (dígitos verificadores)
+
+idade() → cálculo a partir da data de nascimento
+
+diaria_de_internacao() (para Internacao) → retorna o número de dias internado até hoje
+
+Classe auxiliar Endereco para armazenar e exibir o endereço completo.
+
+Exemplos de uso (um paciente internado e um ambulatorial), imprimindo:
+
+Dados pessoais + cálculo de IMC + idade + status de CPF
+
+Informações específicas (dias de internação ou data da última consulta e especialidade)
+
+Como apresentar
+Monte um relatório em formato de texto (Markdown ou PDF), incluindo:
+
+Contextualização e objetivo do sistema.
+
+Diagrama de classes (pode ser ASCII art).
+
+Código-fonte comentado.
+
+Exemplos de entrada/saída (print no console).
+
+Considerações finais sobre possíveis extensões (ex.: integração com banco de dados ou API REST).

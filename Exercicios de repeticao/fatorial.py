@@ -2,8 +2,10 @@
 
 numero = int(input("Informe um número para calcular seu fatorial: "))
 
-f = 0
 
-for i in range(numero, 0, -1):
-   pass
+
+for i in range(numero - 1, 0, -1):
+   numero *= i
+
+print(numero)
 

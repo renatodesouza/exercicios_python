@@ -42,7 +42,10 @@ print(novo_dici)
 # Dado um dicionário de nomes e idades, exiba o nome da pessoa mais velha.
 pessoas = {'nome':'renato', 'idade':40, 'nome':'lucas', 'idade':35}
 
+print('------------Pessoa mais velha--------------------')
 
+for v in pessoas.values():
+    print(v)
 
 # Crie um dicionário onde as chaves são números de 1 a 5 e os valores são seus respectivos quadrados.
 #Solução 1

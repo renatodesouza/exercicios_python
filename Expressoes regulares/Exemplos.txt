@@ -1,0 +1,25 @@
+4. Sintaxe e Metacaracteres Comuns
+4.1. Metacaracteres Básicos
+.: Qualquer caractere, exceto nova linha (\n).
+^: Início da string.
+$: Final da string.
+*: Zero ou mais repetições do padrão anterior.
++: Uma ou mais repetições do padrão anterior.
+?: Zero ou uma repetição; também usado para tornar quantificadores "não gananciosos".
+{n}: Exatamente n repetições.
+{n,}: Pelo menos n repetições.
+{n,m}: Entre n e m repetições.
+4.2. Classes de Caracteres
+\d: Dígito (equivalente a [0-9]).
+\D: Não dígito.
+\w: Caractere alfanumérico (letras, dígitos e underscore).
+\W: Não é caractere alfanumérico.
+\s: Espaço em branco (espaço, tab, nova linha).
+\S: Não espaço em branco.
+[abc]: Qualquer caractere entre os colchetes.
+[a-z]: Qualquer letra minúscula.
+[A-Z]: Qualquer letra maiúscula.
+[0-9]: Qualquer dígito.
+4.3. Grupos e Captura
+( ... ): Define um grupo de captura.
+(?: ... ): Grupo sem captura (útil para agrupar sem armazenar).

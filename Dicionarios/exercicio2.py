@@ -29,5 +29,5 @@ frase = 'Meu nome não é jhony, meu nome é pedro'
 
 lst = frase.split()
 
-
+print(lst)
 

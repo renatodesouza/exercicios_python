@@ -1,0 +1,67 @@
+1. Contexto
+A Software House XPTO está contratando desenvolvedores para atuar com Python e Ruby. Como diferencial, oferece treinamento e certificação nas linguagens. Para seleção, propôs um desafio de implementação: construir um sistema de cadastro de estudantes (graduação e pós‑graduação), atendendo aos requisitos abaixo.
+
+2. Objetivo
+Desenvolver em Python uma API ou biblioteca que permita:
+
+Cadastrar estudantes de graduação e pós‑graduação.
+
+Garantir herança de comportamentos comuns (classe base Estudante).
+
+Incluir atributos específicos:
+
+Graduação: TCC e estágio.
+
+Pós‑graduação: artigo.
+
+3. Requisitos Funcionais
+Dados gerais do estudante
+
+Nome (string)
+
+E‑mail (string)
+
+Telefone (string)
+
+Endereço (rua, número, bairro, CEP, cidade, estado)
+
+Data de nascimento (date)
+
+Sexo (enum: ‘M’, ‘F’, ‘Outro’)
+
+CPF (string)
+
+Tipo de curso
+
+Graduação → precisa armazenar título do TCC e nome da empresa de estágio.
+
+Pós‑graduação → precisa armazenar título do artigo.
+
+4. Modelo de Classes e Herança
+plaintext
+Copiar
+Editar
+┌─────────────────────────────────┐
+│           Estudante            │  ← Atributos e métodos comuns
+│─────────────────────────────────│
+│ - nome                          │
+│ - email                         │
+│ - telefone                      │
+│ - endereco                      │
+│ - data_nascimento               │
+│ - sexo                          │
+│ - cpf                           │
+│ + validar_cpf()                 │
+│ + idade()                       │
+└──────────────┬──────────────────┘
+               │
+    ┌──────────┴──────────┐
+    │                     │
+┌───────────────┐   ┌─────────────────┐
+│  Graduacao    │   │ PosGraduacao    │
+│───────────────│   │─────────────────│
+│ - tcc         │   │ - artigo        │
+│ - estagio     │   └─────────────────┘
+│ + apresentar_tcc()│
+│ + relatorio_estagio()│
+└─────────────────┘
